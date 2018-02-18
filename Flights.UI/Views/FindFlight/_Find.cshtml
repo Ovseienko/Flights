@@ -1,0 +1,24 @@
+﻿@model Step
+<div class="search container">
+    @if (Model.CurrentStepName == "country")
+    {
+        <h2 class="search__hint">To start searching your flight please select a @Model.CurrentStepName:</h2>
+    }
+    else
+    {
+        <h2 class="search__hint">Please select a @Model.CurrentStepName:</h2>
+
+    }
+    <div class="search__box">
+        <input class="form-control" type="text" name="@Model.CurrentStepName" value="" id="searchInput" placeholder="Type @Model.CurrentStepName name" />
+        <button class="btn" id="searchBtn" disabled>Search</button>
+    </div>
+    <ul class="search__results" id="searchResults"></ul>
+    @if (Model.NextStepLink.Length > 0)
+    {
+        <a href="@Model.NextStepLink" class="search__next-link disabled">Next Step <span class="glyphicon glyphicon-arrow-right"></span></a>
+        <p class="search__next-hint">Choose a @Model.CurrentStepName to the next step.</p>
+    }
+
+</div>
+

@@ -1,0 +1,86 @@
+﻿@model IEnumerable<Passenger>
+
+<div class="row">
+    <div class="col-xs-12">
+        <h4>Passengers list</h4>
+        <ul class="row">
+            @foreach (var passenger in Model)
+            {
+                <li class="col-xs-12">
+                    <div class="rename">
+                        @passenger.FirstName - @passenger.LastName 
+                        @if (@passenger.Sex != null) { <span>(@passenger.Sex)</span> }
+                        <button class="btn btn-default btn-xs" data-toggle="modal" data-target="#renamePassenger">Rename</button>
+                    </div>
+                    <div>Passenger details: </div>
+                    <ul>
+                        <li>
+                            Seat Number:
+                            @if (passenger.SeatNumber > 0)
+                                {
+                                    <span>passenger.SeatNumber</span>
+                                } else {
+                                    <span> "Not set" </span>
+                                }
+                        </li>
+                        <li>Country:
+                            @if (passenger.Country != null) {
+                                <span>passenger.Country </span>
+                             } else {
+                               <span> "Not set" </span>
+                             }
+                        </li>
+                        @if (passenger.HasReturnTicket)
+                        {
+                            <li>
+                                <span>Has return ticket</span>
+                            </li>
+                        }
+                        @if (passenger.IsVegetarian)
+                        {
+                            <li>
+                                <span>Is a vegeterian</span>
+                            </li>
+                        }
+                        @if (passenger.HasSpecialNeeds)
+                        {
+                            <li>
+
+                                <span>Has special needs</span>
+                            </li>
+                        }
+                    </ul>
+                    <!-- Modal -->
+                    <div class="modal fade" id="renamePassenger" tabindex="-1" role="dialog" aria-labelledby="rename">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title" id="myModalLabel">Register for a Flight</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <form class="register-form" method="post" action="RenamePassenger">
+                                        <input type="hidden" class="form-control" name="passengerId" value="@passenger.Id">
+                                        <div class="form-group">
+                                            <label for="firstName">First name</label>
+                                            <input type="text" class="form-control" name="firstName" id="firstName" placeholder="First name">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="lastName">Last name</label>
+                                            <input type="text" class="form-control" name="lastName" id="lastName" placeholder="Last name">
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                            <button type="submit" class="btn btn-primary">Rename</button>
+                                        </div>
+                                    </form>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            }
+        </ul>
+    </div>
+</div>

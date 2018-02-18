@@ -1,0 +1,92 @@
+﻿.search__hint {
+    margin: 30px 0;
+}
+
+.search__results li.selected {
+    color: red;
+}
+
+.form-control {
+    float: left;
+    margin-right: 10px;
+}
+
+.search__next-link {
+    margin-top: 30px;
+    display: block;
+    text-align: right;
+    font-size: 16px;
+}
+
+.search__next-link.disabled {
+    opacity:0.75;
+    pointer-events: none;
+}
+
+.search__next-link .glyphicon {
+    top: 3px;
+}
+
+.search__next-hint {
+    font-style: italic;
+    color: #888;
+    text-align: right;
+    font-size: 12px;
+}
+
+#searchResults {
+    padding: 0;
+    list-style: none;
+    margin-top: 30px;
+}
+
+#searchResults li a {
+    cursor: pointer;
+}
+
+.search__result {
+    font-size: 16px;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+.search__result:hover {
+    opacity: 0.7;
+}
+
+.flights {
+    margin-top:20px;
+    padding: 0;
+    list-style: none;
+}
+.flights li {
+    margin-bottom: 10px;
+}
+
+.flights span {
+    font-weight: bold;
+}
+
+.details-btn a {
+    color: #fff;
+}
+
+.details-btn a:hover {
+    color: #fff;
+    text-decoration: none;
+}
+.see-btn {
+    margin-bottom: 10px;
+}
+
+.btn-register {
+    float: right;
+}
+
+.register-form label{
+    display: block;
+}
+
+.register-form .form-control {
+    float: none;
+}

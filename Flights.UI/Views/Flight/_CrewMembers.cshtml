@@ -1,0 +1,28 @@
+﻿@model IEnumerable<CrewMember>
+
+<div class="row">
+    <div class="col-xs-12">
+        <h4>Crew Members:</h4>
+        <ul class="row">
+            @foreach (var crewMem in Model)
+            {
+                <li class="col-xs-12">
+                    <span>@crewMem.FirstName</span> @crewMem.LastName -
+                    @if (@crewMem.IsPilot) { 
+                        <span> a pilot (@crewMem.Position)</span>;
+                    }
+                    else
+                    {
+                        <div>@crewMem.Position</div>
+                    }
+                        <ul>
+                            <li>Country: @crewMem.Country</li>
+                            <li>Age: @crewMem.Age</li>
+                            <li>Years of experience: @crewMem.YearsOfExperience</li>
+                            <li>Years in company: @crewMem.YearsInCompany</li>
+                        </ul>
+                </li>
+            }
+        </ul>
+    </div>
+</div>
